@@ -1,7 +1,4 @@
 import { z } from "zod";
-
-import { prisma } from "~/server/db";
-import { cursorTo } from "readline";
 import {
   createTRPCRouter,
   publicProcedure,
@@ -61,7 +58,7 @@ export const tweetRouter = createTRPCRouter({
         data: { content, userId: ctx.session.user.id },
       });
 
-      void ctx.revalidateSSG(`/profiles/${ctx.session.user.id}`);
+      void ctx.revalidateSSG?.(`/profiles/${ctx.session.user.id}`);
 
       return tweet;
     }),

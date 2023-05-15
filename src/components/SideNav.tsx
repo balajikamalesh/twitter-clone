@@ -5,7 +5,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import IconHoverEffect from "./IconHoverEffect";
 import { VscHome, VscAccount, VscSignIn, VscSignOut } from "react-icons/vsc";
 
-function SideNav(props) {
+function SideNav() {
   const session = useSession();
   const user = session.data?.user;
   return (

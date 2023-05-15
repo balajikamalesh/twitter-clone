@@ -31,7 +31,7 @@ const dateTimeFormatter = new Intl.DateTimeFormat(undefined, {
 
 type HeartButtonProps = {
   onClick: () => void;
-  isLoading: boolean;
+  isLoading?: boolean;
   likedByMe: boolean;
   likeCount: number;
 };

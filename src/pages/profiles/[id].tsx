@@ -73,7 +73,7 @@ const ProfilePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         </div>
         <FollowButton
           isFollowing={profile.isFollowing}
-          isLoading={toggleFollow}
+          isLoading={toggleFollow.isLoading}
           userId={id}
           onClick={() => toggleFollow.mutate({ userId: id })}
         />
@@ -83,7 +83,7 @@ const ProfilePage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           tweets={tweets?.data?.pages.flatMap((page) => page.tweets)}
           isError={tweets.isError}
           isLoading={tweets.isLoading}
-          hasMore={tweets.hasNextPage || null}
+          hasMore={tweets.hasNextPage || undefined}
           fetchNewTweets={tweets.fetchNextPage}
         />
       </main>
@@ -106,7 +106,7 @@ function FollowButton({
   if (session.status !== "authenticated" || session.data.user.id === userId)
     return null;
   return (
-    <Button disabled={isLoading} onClick={onClick} small gray={isFollowing}>
+    <Button disabled={isLoading} onClick={onClick} small gray={isFollowing} className="">
       {isFollowing ? "Unfollow" : "Follow"}
     </Button>
   );

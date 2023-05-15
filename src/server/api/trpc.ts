@@ -46,7 +46,7 @@ export const createInnerTRPCContext = (opts: CreateContextOptions) => {
   return {
     session: opts.session,
     prisma,
-    revalidateSSG: opts.revalidate
+    revalidateSSG: opts.revalidateSSG
   };
 };
 

@@ -3,7 +3,7 @@ import React from "react";
 import { VscAccount } from "react-icons/vsc";
 
 type ProfileImageProps = {
-  src?: string | "";
+  src: string | null;
   className?: string;
 };
 

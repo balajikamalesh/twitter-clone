@@ -61,8 +61,8 @@ export const profileRouter = createTRPCRouter({
       }
 
       //Revalidation
-      void ctx.revalidateSSG(`/profiles/${userId}`);
-      void ctx.revalidateSSG(`/profiles/${currentUserId}`);
+      void ctx.revalidateSSG?.(`/profiles/${userId}`);
+      void ctx.revalidateSSG?.(`/profiles/${currentUserId}`);
 
       return { addedFollow };
     }),

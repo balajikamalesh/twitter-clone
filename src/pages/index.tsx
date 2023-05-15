@@ -17,7 +17,7 @@ function RecentTweets() {
       tweets={tweets?.data?.pages.flatMap((page) => page.tweets)}
       isError={tweets.isError}
       isLoading={tweets.isLoading}
-      hasMore={tweets.hasNextPage || null}
+      hasMore={tweets.hasNextPage}
       fetchNewTweets={tweets.fetchNextPage}
     />
   );
@@ -35,7 +35,7 @@ function FollowingTweets() {
       tweets={tweets?.data?.pages.flatMap((page) => page.tweets)}
       isError={tweets.isError}
       isLoading={tweets.isLoading}
-      hasMore={tweets.hasNextPage || null}
+      hasMore={tweets.hasNextPage}
       fetchNewTweets={tweets.fetchNextPage}
     />
   );
