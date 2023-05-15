@@ -85,7 +85,7 @@ function TweetCard({
 }: tweet) {
   const trpcUtils = api.useContext();
   const toggleLike = api.tweet.toggleLike.useMutation({
-    onSuccess: async ({ addedLike }) => {
+    onSuccess: ({ addedLike }) => {
       const updateData: Parameters<
         typeof trpcUtils.tweet.infiniteFeed.setInfiniteData
       >[1] = (oldData) => {
